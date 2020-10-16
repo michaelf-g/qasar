@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+</head>
+<body>
+
+<div style="margin: 50px;">
+
+<table >
+    <h1 class="top-left" style="color: #46b8da;" >Qasar Bank</h1>
+    <img src="image/bank_logo.jpg" class="" align="right" >
+
+    <tr>
+        <td>
+            <span class="input-lg">Account Name</span>
+        </td>
+        <td>
+            <input type="text" class="btn btn-default" name="create" placeholder="Name account" style="margin-top : 25px;">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="input-lg" style="margin-bottom : 25px;">Account Type</span >
+        </td>
+        <td>
+            <div class="dropdown" style="margin-top : 25px;">
+                <button class="btn btn-default" type="button" data-toggle="dropdown">Select Account Type
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Current</a></li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <button class="btn btn-small" type="button" id="MybtnModal" style="margin-top : 25px; background-color: #46b8da" >Create Account</button>
+        </td>
+
+        <td>
+            <input class="btn btn-small" type="button" name="create" value="Return to Home" style="margin-top : 25px; background-color: coral" onclick="location.href='welcome.html'">
+        </td>
+    </tr>
+
+
+</table>
+</div>
+</body>
+
+<script>
+    $(document).ready(function(){
+        $('#MybtnModal').click(function(){
+            $('#Mymodal').modal('show')
+        });
+    });
+</script>
+
+<div class="modal fade" id="Mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Notification</h4>
+            </div>
+            <div class="modal-body">
+                Account successfully created
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</html>
+
+
+
