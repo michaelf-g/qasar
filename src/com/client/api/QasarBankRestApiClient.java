@@ -40,7 +40,7 @@ public class QasarBankRestApiClient implements IQasarBankApi
     public AccountOrder createNewAccount(AccountOrder accountOrder) throws Exception {
         WebResource resource = getWebResource();
 
-        ClientResponse response = resource.path("account").path("create").path(accountOrder.getCustomerId()).type(MediaType.APPLICATION_JSON_TYPE).post(ClientResponse.class, accountOrder);
+        ClientResponse response = resource.path("account").path("create").path(accountOrder.getCustomerId()).type(MediaType.APPLICATION_XML_TYPE).post(ClientResponse.class, accountOrder);
 
         if (response.getStatus() == ClientResponse.Status.CREATED.getStatusCode() || response.getStatus() == ClientResponse.Status.OK.getStatusCode()
                 || response.getStatus() == ClientResponse.Status.SEE_OTHER.getStatusCode() || response.getStatus() == ClientResponse.Status.FOUND.getStatusCode())
@@ -49,7 +49,7 @@ public class QasarBankRestApiClient implements IQasarBankApi
             if (orderLocation != null)
             {
                 resource = QasarBankRestApiClient.client.resource(orderLocation);
-                return resource.accept(MediaType.APPLICATION_JSON_TYPE).get(AccountOrder.class);
+                return resource.accept(MediaType.APPLICATION_XML_TYPE).get(AccountOrder.class);
             }
         }
         else
@@ -59,7 +59,7 @@ public class QasarBankRestApiClient implements IQasarBankApi
     }
 
     @Override
-    public UserInfo getUserInformation(String customerId) throws Exception {
+    public UserInfo getUserInformation(String customerId) {
         WebResource resource = getWebResource();
         return resource.path("user").path(customerId).accept(MediaType.APPLICATION_JSON_TYPE).get(UserInfo.class);
     }
