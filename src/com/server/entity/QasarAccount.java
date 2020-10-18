@@ -68,4 +68,9 @@ public class QasarAccount
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
+
+    public void updateBalance(double amount)
+    {
+        this.balance += amount;
+    }
 }

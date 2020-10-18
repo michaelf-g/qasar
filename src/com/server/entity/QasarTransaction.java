@@ -88,4 +88,9 @@ public class QasarTransaction
     public void setStatusId(long statusId) {
         this.statusId = statusId;
     }
+
+    public void markAsComplete()
+    {
+        this.statusId = TransactionStatus.Complete.ordinal();
+    }
 }
